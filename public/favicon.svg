@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <style>
+      @media (prefers-color-scheme: dark) {
+        .icon { fill: #c8e6c9; }
+        .outline { stroke: #c8e6c9; }
+        .eye { fill: #1a1a2e; }
+      }
+    </style>
+  </defs>
+
+  <!-- Kruhové pozadí pro tmavý režim -->
+  <rect id="dark-bg" x="2" y="2" width="60" height="60" rx="12" fill="transparent" />
+
+  <!-- Hlava poníka – jednoduchá silueta -->
+  <g transform="translate(32, 33)">
+    <!-- Základ hlavy -->
+    <ellipse cx="0" cy="0" rx="16" ry="14" fill="#4a7c59" class="icon" />
+
+    <!-- Uši -->
+    <path d="M-8,-12 L-10,-24 L-2,-14" fill="#4a7c59" class="icon" stroke-linejoin="round" />
+    <path d="M8,-12 L10,-24 L2,-14" fill="#4a7c59" class="icon" stroke-linejoin="round" />
+
+    <!-- Hříva -->
+    <path d="M-14,-8 Q-22,-6 -20,-2 Q-22,2 -14,4" fill="#3a5a40" class="icon" opacity="0.8" />
+    <path d="M14,-8 Q18,-10 16,-4 Q18,0 14,4" fill="#3a5a40" class="icon" opacity="0.8" />
+    <path d="M-16,-4 Q-20,-8 -22,-6" fill="#3a5a40" class="icon" opacity="0.8" />
+    <path d="M16,-4 Q20,-8 22,-6" fill="#3a5a40" class="icon" opacity="0.8" />
+
+    <!-- Oko -->
+    <circle cx="-6" cy="-3" r="3" fill="#1a1a2e" class="eye" />
+    <circle cx="-5" cy="-4" r="1" fill="white" opacity="0.7" />
+
+    <!-- Nozdry -->
+    <circle cx="-4" cy="6" r="1.5" fill="#3a5a40" class="icon" opacity="0.6" />
+    <circle cx="4" cy="6" r="1.5" fill="#3a5a40" class="icon" opacity="0.6" />
+  </g>
+</svg>
