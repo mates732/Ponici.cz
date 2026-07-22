@@ -73,18 +73,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Poníci | Ježdění pro děti i dospělé" },
+      { title: "Poníci | Jízdy pro děti i dospělé" },
       {
         name: "description",
         content:
-          "Ježdění na ponících, jezdecký výcvik a zážitky s koni pro děti i dospělé na Císařském ostrově v Praze.",
+          "Jízdy na ponících, jezdecký výcvik a zážitky s koni pro děti i dospělé na Císařském ostrově v Praze.",
       },
       { name: "author", content: "Poníci" },
-      { property: "og:title", content: "Poníci | Ježdění pro děti i dospělé" },
+      { property: "og:title", content: "Poníci | Jízdy pro děti i dospělé" },
       {
         property: "og:description",
         content:
-          "Ježdění na ponících, jezdecký výcvik a zážitky s koni pro děti i dospělé na Císařském ostrově v Praze.",
+          "Jízdy na ponících, jezdecký výcvik a zážitky s koni pro děti i dospělé na Císařském ostrově v Praze.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

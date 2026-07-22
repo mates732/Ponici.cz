@@ -22,9 +22,9 @@ const img = (name: string) => `/images/ponici/${name}`;
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SportsActivityLocation",
-  name: "Poníci — Ježdění pro děti i dospělé",
+  name: "Poníci — Jízdy pro děti i dospělé",
   description:
-    "Ježdění na ponících, jezdecký výcvik a zážitky s koni pro děti i dospělé na Císařském ostrově v Praze.",
+    "Jízdy na ponících, jezdecký výcvik a zážitky s koni pro děti i dospělé na Císařském ostrově v Praze.",
   telephone: "+420721208118",
   email: "monika.zamrazilova@seznam.cz",
   url: SITE_URL,
@@ -42,17 +42,17 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Poníci | Ježdění pro děti i dospělé" },
+      { title: "Poníci | Jízdy pro děti i dospělé" },
       {
         name: "description",
         content:
-          "Ježdění na ponících, jezdecký výcvik a zážitky s koni pro děti i dospělé na Císařském ostrově v Praze.",
+          "Jízdy na ponících, jezdecký výcvik a zážitky s koni pro děti i dospělé na Císařském ostrově v Praze.",
       },
-      { property: "og:title", content: "Poníci | Ježdění pro děti i dospělé" },
+      { property: "og:title", content: "Poníci | Jízdy pro děti i dospělé" },
       {
         property: "og:description",
         content:
-          "Ježdění na ponících, jezdecký výcvik a zážitky s koni pro děti i dospělé na Císařském ostrově v Praze.",
+          "Jízdy na ponících, jezdecký výcvik a zážitky s koni pro děti i dospělé na Císařském ostrově v Praze.",
       },
       { property: "og:url", content: SITE_URL },
       { property: "og:type", content: "website" },
@@ -91,7 +91,7 @@ function Nav() {
           {[
             { label: "O nás", href: "#about" },
             { label: "Programy", href: "#programy" },
-            { label: "Ježdění", href: "#jezdění" },
+                { label: "Jízdy", href: "#jizdy" },
             { label: "Výlety", href: "#vylety" },
             { label: "Stáj", href: "#staj" },
             { label: "Kontakt", href: "#contact" },
@@ -161,14 +161,14 @@ function Hero() {
             </span>
 
             <Heading as="h1" size="xl">
-              Ježdění na ponících
+              Jízdy na ponících
               <br />
               pro děti
               <br />i&nbsp;dospělé.
             </Heading>
 
             <p className="mt-7 max-w-md text-[15px] leading-[1.7] text-foreground/95 md:text-[17px]">
-              Ježdění na ponících, jezdecký výcvik a&nbsp;zážitky
+              Jízdy na ponících, jezdecký výcvik a&nbsp;zážitky
               s&nbsp;koněm na&nbsp;Císařském ostrově v&nbsp;Praze.
             </p>
           </div>
@@ -178,10 +178,10 @@ function Hero() {
           <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
             <div className="flex flex-wrap items-center gap-3">
               <Button href="#contact" variant="primary">
-                Domluvit ježdění
+                Domluvit jízdu
               </Button>
               <Button
-                href="#jezdění"
+                href="#jizdy"
                 variant="secondary"
                 className="bg-cream/75 border-foreground/50"
               >
@@ -233,7 +233,7 @@ function About() {
           <Reveal>
             <Kicker>— O nás</Kicker>
             <Heading className="mt-8">
-              Ježdění, péče
+              Jízdy, péče
               <br />a&nbsp;radost z&nbsp;pohybu.
             </Heading>
 
@@ -241,7 +241,7 @@ function About() {
               <p>
                 Poníci jsou místem, kde mohou lidé trávit čas venku, poznávat
                 koně a získávat jistotu v sedle. Na Císařském ostrově v Praze
-                nabízíme ježdění na ponících i jezdecký výcvik pro děti
+                nabízíme jízdy na ponících i jezdecký výcvik pro děti
                 i&nbsp;dospělé.
               </p>
               <p>
@@ -311,7 +311,7 @@ function PonyPortrait() {
             svou povahu.
           </Heading>
           <p className="mt-6 text-[15.5px] leading-[1.85] text-foreground/75">
-            Nejde jen o ježdění. Jde o vztah — o moment, kdy si člověk
+            Nejde jen o jízdy. Jde o vztah — o moment, kdy si člověk
             k&nbsp;poníkovi najde cestu sám. Poznává jeho povahu, učí se
             naslouchat a respektovat. Více než 20 let zkušeností nás naučilo,
             že každý poník i&nbsp;každý jezdec potřebuje svůj čas.
@@ -389,11 +389,11 @@ function Programy() {
   );
 }
 
-const jezdění = [
+const jizdy = [
   {
     icon: GraduationCap,
     kicker: "01",
-    title: "Jezdění na ponících",
+    title: "Jízdy na ponících",
     body: "První i\u00A0další kroky v\u00A0sedle. Začínáme v\u00A0klidném tempu, postupně se buduje jistota a\u00A0rovnováha. Vhodné pro děti i\u00A0dospělé.",
     img: img("jizdarna-pohyb.jpg"),
   },
@@ -415,13 +415,13 @@ const jezdění = [
 
 function Jezdeni() {
   return (
-    <Section id="jezdění">
+    <Section id="jizdy">
       <Reveal>
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <div className="max-w-xl">
-            <Kicker>— Ježdění a výcvik</Kicker>
+            <Kicker>— Jízdy a výcvik</Kicker>
             <Heading className="mt-8">
-              Ježdění na ponících
+              Jízdy na ponících
               <br />a&nbsp;jezdecký výcvik.
             </Heading>
           </div>
@@ -433,7 +433,7 @@ function Jezdeni() {
       </Reveal>
 
       <div className="mt-20 space-y-24 md:space-y-32">
-        {jezdění.map((s, i) => {
+        {jizdy.map((s, i) => {
           const Icon = s.icon;
           const reversed = i % 2 === 1;
 
@@ -465,7 +465,7 @@ function Jezdeni() {
                     {s.body}
                   </p>
                   <Button href="#contact" variant="link" className="mt-8">
-                    Domluvit ježdění
+                    Domluvit jízdy
                   </Button>
                 </div>
               </article>
@@ -556,7 +556,7 @@ function Staj() {
             </Heading>
           </div>
           <p className="max-w-sm text-[15px] leading-[1.75] text-foreground/70">
-            Nejen ježdění, ale i péče, naslouchání a trpělivost.
+            Nejen jízdy, ale i péče, naslouchání a trpělivost.
           </p>
         </div>
       </Reveal>
@@ -598,7 +598,7 @@ function Staj() {
 
       <Reveal>
         <Expandable className="mt-16">
-          Péče o koně je stejně důležitá jako samotné ježdění. Učíme se
+          Péče o koně je stejně důležitá jako samotné jízdy. Učíme se
           starat se o zvíře, poznáváme jeho potřeby a získáváme zodpovědnost.
           Právě tady se rodí ten nejupřímnější vztah.
         </Expandable>
@@ -609,7 +609,7 @@ function Staj() {
 
 const galleryGroups = [
   {
-    title: "Ježdění a výcvik",
+    title: "Jízdy a výcvik",
     photos: [
       { src: img("jizdarna-skupina.jpg"), alt: "Skupina jezdců na koních na jízdárně", span: "md:col-span-4", h: "h-56 md:h-[320px]" },
       { src: img("jizdarna-pohyb.jpg"), alt: "Hnědý kůň v pohybu na jízdárně", span: "md:col-span-8", h: "h-64 md:h-[320px]" },
@@ -811,7 +811,7 @@ function Contact() {
             nás.
           </Heading>
           <p className="mt-8 max-w-md text-[15px] leading-[1.8] text-foreground/75">
-            Pro informace o ježdění, táborech nebo narozeninových oslavách nám
+            Pro informace o jízdy, táborech nebo narozeninových oslavách nám
             zavolejte nebo napište.
           </p>
 
@@ -884,7 +884,7 @@ function Contact() {
           </div>
 
           <Expandable className="mt-10">
-            Máte otázku k ježdění, táborům nebo narozeninové oslavě? Zavolejte
+            Máte otázku k jízdy, táborům nebo narozeninové oslavě? Zavolejte
             nám nebo napište. Rádi vám řekneme, jak to u nás funguje, a
             domluvíme další krok.
           </Expandable>
@@ -916,7 +916,7 @@ function Footer() {
               <span className="text-3xl font-semibold text-foreground">Poníci</span>
             </div>
             <p className="mt-4 max-w-sm text-[14px] leading-relaxed text-muted-foreground">
-              Ježdění na ponících pro děti i dospělé. Císařský ostrov, Praha.
+              Jízdy na ponících pro děti i dospělé. Císařský ostrov, Praha.
             </p>
           </div>
 
@@ -928,7 +928,7 @@ function Footer() {
               {[
                 { label: "O nás", href: "#about" },
                 { label: "Programy", href: "#programy" },
-                { label: "Ježdění", href: "#jezdění" },
+            { label: "Jízdy", href: "#jizdy" },
                 { label: "Výlety", href: "#vylety" },
                 { label: "Stáj", href: "#staj" },
                 { label: "Galerie", href: "#gallery" },
