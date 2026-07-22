@@ -73,18 +73,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Poníci | Jezdecká školička" },
+      { title: "Poníci | Ježdění pro děti i dospělé" },
       {
         name: "description",
         content:
-          "Jezdecká školička pro děti v srdci Prahy. Ježdění na ponících, jezdecký výcvik a zážitky s poníky na Císařském ostrově u Stromovky.",
+          "Ježdění na ponících, jezdecký výcvik a zážitky s koni pro děti i dospělé na Císařském ostrově v Praze.",
       },
       { name: "author", content: "Poníci" },
-      { property: "og:title", content: "Poníci | Jezdecká školička" },
+      { property: "og:title", content: "Poníci | Ježdění pro děti i dospělé" },
       {
         property: "og:description",
         content:
-          "Jezdecká školička pro děti v srdci Prahy. Ježdění na ponících, jezdecký výcvik a zážitky s poníky na Císařském ostrově u Stromovky.",
+          "Ježdění na ponících, jezdecký výcvik a zážitky s koni pro děti i dospělé na Císařském ostrově v Praze.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -94,7 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "icon", type: "image/svg+xml", href: "/images/logo/ponici-logo-icon.svg" },
       { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
       { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
       { rel: "apple-touch-icon", sizes: "180x180", href: "/favicon-180x180.png" },
