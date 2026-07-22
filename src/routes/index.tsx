@@ -9,7 +9,6 @@ import {
   Mail,
   GraduationCap,
 } from "lucide-react";
-import portrait from "@/assets/portrait.jpg";
 import { Section } from "@/components/section";
 import { Kicker, Heading } from "@/components/heading";
 import { Button } from "@/components/button";
@@ -82,21 +81,8 @@ function Nav() {
       }`}
     >
       <div className="mx-auto grid h-full grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-6 md:grid-cols-[1fr_auto_1fr] md:px-10">
-        <a href="#top" className="flex min-w-0 items-center gap-2.5">
-          {/* Icon only on mobile */}
-          <img
-            src="/images/logo/ponici-logo-icon.svg"
-            alt=""
-            className="h-9 w-9 shrink-0 md:hidden"
-          />
-          {/* Horizontal logo on desktop */}
-          <img
-            src="/images/logo/ponici-logo-horizontal.svg"
-            alt="Poníci — Ježdění pro děti i dospělé"
-            className="hidden h-10 shrink-0 md:block"
-          />
-          {/* Fallback text for mobile next to icon */}
-          <span className="font-serif text-xl tracking-tight text-foreground md:hidden">
+        <a href="#top" className="flex min-w-0 items-center" aria-label="Poníci">
+          <span className="font-serif text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
             Poníci
           </span>
         </a>
@@ -104,7 +90,7 @@ function Nav() {
         <nav className="hidden items-center gap-10 text-[13px] text-foreground/90 md:flex md:justify-center">
           {[
             { label: "O nás", href: "#about" },
-            { label: "Pro děti", href: "#pro-deti" },
+            { label: "Programy", href: "#programy" },
             { label: "Ježdění", href: "#jezdění" },
             { label: "Výlety", href: "#vylety" },
             { label: "Stáj", href: "#staj" },
@@ -169,6 +155,10 @@ function Hero() {
               <span className="h-px w-8 bg-foreground/40" /> Praha ·
               Císařský ostrov
             </span>
+            <span className="mb-8 hidden sm:inline-flex items-center gap-2 text-micro uppercase tracking-kicker text-foreground/60">
+              <span className="h-px w-8 bg-foreground/30" /> Více než 20 let
+              zkušeností
+            </span>
 
             <Heading as="h1" size="xl">
               Ježdění na ponících
@@ -229,10 +219,10 @@ function About() {
         <Reveal className="md:col-span-5">
           <div className="relative">
             <img
-              src={portrait}
-              alt="Monika Zamrazilová se svým koněm"
+              src={img("objimani-kun.jpg")}
+              alt="Osoba objímá bílého koně ve stáji"
               width={1200}
-              height={1500}
+              height={900}
               loading="lazy"
               className="aspect-[4/5] w-full rounded-2xl object-cover shadow-[0_40px_80px_-50px_rgba(60,45,25,0.45)]"
             />
@@ -243,15 +233,21 @@ function About() {
           <Reveal>
             <Kicker>— O nás</Kicker>
             <Heading className="mt-8">
-              Poníci, ježdění
+              Ježdění, péče
               <br />a&nbsp;radost z&nbsp;pohybu.
             </Heading>
 
             <div className="mt-10 space-y-6 text-[16px] leading-[1.85] text-foreground/75 md:text-[17px]">
               <p>
-                Poníci jsou místem, kde mohou děti trávit čas venku, poznávat
+                Poníci jsou místem, kde mohou lidé trávit čas venku, poznávat
                 koně a získávat jistotu v sedle. Na Císařském ostrově v Praze
-                nabízíme ježdění na ponících i jezdecký výcvik pro děti.
+                nabízíme ježdění na ponících i jezdecký výcvik pro děti
+                i&nbsp;dospělé.
+              </p>
+              <p>
+                Jízdy na ponících provozujeme už více než 20 let. Za tu dobu
+                jsme pomohli stovkám dětí i dospělých najít jistotu v sedle
+                a&nbsp;klidný vztah ke koním.
               </p>
               <p>
                 Začít může každý, kdo má chuť poznat poníky blíž. Někdo přijde
@@ -261,8 +257,9 @@ function About() {
               </p>
             </div>
 
-            <div className="mt-16 grid grid-cols-1 gap-5 border-t border-border pt-10 md:grid-cols-3 md:gap-6">
+            <div className="mt-16 grid grid-cols-1 gap-5 border-t border-border pt-10 md:grid-cols-4 md:gap-6">
               {[
+                { n: "20+", l: "let zkušeností" },
                 { n: "Císařský ostrov", l: "Praha" },
                 { n: "Stromovka", l: "v okolí" },
                 {
@@ -292,13 +289,16 @@ function PonyPortrait() {
     <Section>
       <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-12 md:gap-16">
         <Reveal className="md:col-span-7">
-          <div className="overflow-hidden rounded-2xl">
+          <div
+            className="overflow-hidden rounded-2xl"
+            style={{ backgroundColor: "oklch(0.945 0.015 82)" }}
+          >
             <img
               src={img("detail-tvar-ponika.jpg")}
               alt="Detailní portrét bílého poníka — jeho měkký čumák a zvědavé oči"
               width={1200}
               height={900}
-              className="aspect-[4/3] w-full object-cover"
+              className="aspect-[3/4] w-full object-contain md:aspect-[4/5]"
             />
           </div>
         </Reveal>
@@ -311,10 +311,10 @@ function PonyPortrait() {
             svou povahu.
           </Heading>
           <p className="mt-6 text-[15.5px] leading-[1.85] text-foreground/75">
-            Nejde jen o ježdění. Jde o vztah — o moment, kdy si dítě
-            k&nbsp;poníkovi najde cestu samo. Poznává jeho povahu, učí se
-            naslouchat a respektovat. A právě tyhle chvíle mezi sebou
-            a&nbsp;koněm zůstávají nejdéle.
+            Nejde jen o ježdění. Jde o vztah — o moment, kdy si člověk
+            k&nbsp;poníkovi najde cestu sám. Poznává jeho povahu, učí se
+            naslouchat a respektovat. Více než 20 let zkušeností nás naučilo,
+            že každý poník i&nbsp;každý jezdec potřebuje svůj čas.
           </p>
         </Reveal>
       </div>
@@ -322,40 +322,40 @@ function PonyPortrait() {
   );
 }
 
-function ProDeti() {
+function Programy() {
   const photos = [
     {
       src: img("deti-kone-strom.jpg"),
-      alt: "Děti s koněm pod kvetoucím stromem na jaře",
+      alt: "Skupina s koněm pod kvetoucím stromem na jaře",
       cols: "md:col-span-7",
       aspect: "aspect-[4/3]",
     },
     {
       src: img("portret-dite-kun-jizdarna.jpg"),
-      alt: "Dítě stojí vedle koně na jízdárně a hladí ho",
+      alt: "Jezdec stojí vedle koně na jízdárně a hladí ho",
       cols: "md:col-span-5",
       aspect: "aspect-[3/4]",
     },
     {
       src: img("objimani-kun.jpg"),
-      alt: "Dítě objímá bílého koně ve stáji",
+      alt: "Osoba objímá bílého koně ve stáji",
       cols: "md:col-span-5",
       aspect: "aspect-[4/3]",
     },
     {
       src: img("zapad-slunce-dite.jpg"),
-      alt: "Dítě na poníkovi při západu slunce",
+      alt: "Jezdec na poníkovi při západu slunce",
       cols: "md:col-span-7",
       aspect: "aspect-[4/3]",
     },
   ];
 
   return (
-    <Section id="pro-deti" background="cream">
+    <Section id="programy" background="cream">
       <Reveal>
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <div className="max-w-xl">
-            <Kicker>— Pro děti a rodiny</Kicker>
+            <Kicker>— Programy</Kicker>
             <Heading className="mt-8">
               Blízkost, která
               <br />
@@ -363,8 +363,8 @@ function ProDeti() {
             </Heading>
           </div>
           <p className="max-w-sm text-[15px] leading-[1.75] text-foreground/70">
-            Nejkrásnější okamžiky se dějí, když dítě a poník najdou společnou
-            řeč.
+            Nejkrásnější okamžiky se dějí, když člověk a poník najdou společnou
+            řeč. Programy přizpůsobíme věku, zkušenostem i&nbsp;domluvě.
           </p>
         </div>
       </Reveal>
@@ -394,14 +394,14 @@ const jezdění = [
     icon: GraduationCap,
     kicker: "01",
     title: "Jezdění na ponících",
-    body: "První i\u00A0další kroky v\u00A0sedle. Děti se učí jezdit v\u00A0klidném tempu, postupně získávají jistotu a\u00A0rovnováhu.",
+    body: "První i\u00A0další kroky v\u00A0sedle. Začínáme v\u00A0klidném tempu, postupně se buduje jistota a\u00A0rovnováha. Vhodné pro děti i\u00A0dospělé.",
     img: img("jizdarna-pohyb.jpg"),
   },
   {
     icon: ShieldCheck,
     kicker: "02",
     title: "Parkurový výcvik",
-    body: "Výcvik dětí v\u00A0parkuru. Od jednoduchých překážek po složitější parcours pod vedením zkušených lektorů.",
+    body: "Výcvik v\u00A0parkuru. Od jednoduchých překážek po složitější parcours pod vedením zkušených lektorů. Podle věku a\u00A0zkušeností.",
     img: img("jizda-ponik-zepredu.jpg"),
   },
   {
@@ -476,7 +476,7 @@ function Jezdeni() {
 
       <Reveal>
         <Expandable className="mt-16">
-          Každé dítě začíná jinak. Proto u nás najdou prostor jak ti, kteří se
+          Každý začíná jinak. Proto u nás najdou prostor jak ti, kteří se
           s poníkem teprve seznamují, tak jezdci, kteří chtějí rozvíjet
           techniku a jistotu v sedle.
         </Expandable>
@@ -493,9 +493,8 @@ function Vylety() {
           <div className="max-w-xl">
             <Kicker>— Výlety a příroda</Kicker>
             <Heading className="mt-8">
-              Lese, u řeky
-              <br />
-              a&nbsp;za městem.
+              Vyjížďky lesem,
+              <br />k&nbsp;řece i&nbsp;za město.
             </Heading>
           </div>
           <p className="max-w-sm text-[15px] leading-[1.75] text-foreground/70">
@@ -509,7 +508,7 @@ function Vylety() {
         <Reveal className="md:col-span-8 overflow-hidden rounded-2xl">
           <img
             src={img("vyjizdka-les-skupina.jpg")}
-            alt="Skupina dětí na koních projíždí lesem na vyjížďce"
+            alt="Skupina na koních projíždí lesem na vyjížďce"
             loading="lazy"
             className="aspect-[4/3] w-full object-cover"
           />
@@ -525,7 +524,7 @@ function Vylety() {
         <Reveal delay={40} className="md:col-span-5 overflow-hidden rounded-2xl">
           <img
             src={img("reka-skupina-kone.jpg")}
-            alt="Skupina dětí s koněm u řeky"
+            alt="Skupina s koněm u řeky"
             loading="lazy"
             className="aspect-[4/3] w-full object-cover"
           />
@@ -533,7 +532,7 @@ function Vylety() {
         <Reveal delay={100} className="md:col-span-7 overflow-hidden rounded-2xl">
           <img
             src={img("deti-reka-ponici.jpg")}
-            alt="Děti s bílými poníky se baví v řece"
+            alt="Skupina s bílými poníky v řece"
             loading="lazy"
             className="aspect-[4/3] w-full object-cover"
           />
@@ -582,7 +581,7 @@ function Staj() {
         <Reveal delay={40} className="md:col-span-5 overflow-hidden rounded-2xl">
           <img
             src={img("staj-deti-ponik.jpg")}
-            alt="Děti se seznamují s poníkem ve stáji"
+            alt="Seznamování s poníkem ve stáji"
             loading="lazy"
             className="aspect-[4/3] w-full object-cover"
           />
@@ -590,7 +589,7 @@ function Staj() {
         <Reveal delay={100} className="md:col-span-7 overflow-hidden rounded-2xl">
           <img
             src={img("pece-kopyta.jpg")}
-            alt="Dítě se učí čistit kopýtka koně"
+            alt="Čištění kopýtek koně"
             loading="lazy"
             className="aspect-[4/3] w-full object-cover"
           />
@@ -599,8 +598,8 @@ function Staj() {
 
       <Reveal>
         <Expandable className="mt-16">
-          Péče o koně je stejně důležitá jako samotné ježdění. Děti se učí
-          starat se o zvíře, poznávají jeho potřeby a získávají zodpovědnost.
+          Péče o koně je stejně důležitá jako samotné ježdění. Učíme se
+          starat se o zvíře, poznáváme jeho potřeby a získáváme zodpovědnost.
           Právě tady se rodí ten nejupřímnější vztah.
         </Expandable>
       </Reveal>
@@ -612,7 +611,7 @@ const galleryGroups = [
   {
     title: "Ježdění a výcvik",
     photos: [
-      { src: img("jizdarna-skupina.jpg"), alt: "Skupina dětí na koních na jízdárně", span: "md:col-span-4", h: "h-56 md:h-[320px]" },
+      { src: img("jizdarna-skupina.jpg"), alt: "Skupina jezdců na koních na jízdárně", span: "md:col-span-4", h: "h-56 md:h-[320px]" },
       { src: img("jizdarna-pohyb.jpg"), alt: "Hnědý kůň v pohybu na jízdárně", span: "md:col-span-8", h: "h-64 md:h-[320px]" },
     ],
   },
@@ -621,8 +620,8 @@ const galleryGroups = [
     photos: [
       { src: img("vyjizdka-podzim.jpg"), alt: "Podzimní vyjížďka lesní cestou", span: "md:col-span-5", h: "h-56 md:h-[360px]" },
       { src: img("reka-skupina-kone.jpg"), alt: "Skupina s koněm u řeky", span: "md:col-span-7", h: "h-56 md:h-[360px]" },
-      { src: img("deti-reka-ponici.jpg"), alt: "Děti s poníky v řece", span: "md:col-span-6", h: "h-56 md:h-[300px]" },
-      { src: img("zapad-slunce-dite.jpg"), alt: "Dítě na poníkovi při západu slunce", span: "md:col-span-6", h: "h-56 md:h-[300px]" },
+      { src: img("deti-reka-ponici.jpg"), alt: "Skupina s poníky v řece", span: "md:col-span-6", h: "h-56 md:h-[300px]" },
+      { src: img("zapad-slunce-dite.jpg"), alt: "Jezdec na poníkovi při západu slunce", span: "md:col-span-6", h: "h-56 md:h-[300px]" },
     ],
   },
   {
@@ -725,7 +724,7 @@ function Parties() {
         </Reveal>
         <Reveal className="md:order-1">
           <p className="text-[16px] leading-[1.85] text-foreground/75 md:text-[17px]">
-            Uspořádejte dítěti narozeninovou oslavu s poníky v krásném
+            Uspořádejte oslavu s poníky v krásném
             prostředí Stromovky.
           </p>
 
@@ -761,8 +760,16 @@ function Faq() {
                 a: "Na Císařském ostrově v Praze, v blízkosti Stromovky.",
               },
               {
-                q: "Pro jaký věk jsou tábory?",
-                a: "Pro děti od 5 do 15 let.",
+                q: "Pro jaký věk jsou vaše programy?",
+                a: "Pro děti i dospělé. Programy přizpůsobíme věku, zkušenostem a domluvě.",
+              },
+              {
+                q: "Jak dlouho platí permanentka?",
+                a: "Permanentka platí 3 měsíce od zakoupení.",
+              },
+              {
+                q: "Do kdy je možné omluvit lekci?",
+                a: "Lekci je potřeba omluvit nejpozději 24 hodin předem.",
               },
               {
                 q: "Jak domluvit narozeninovou oslavu?",
@@ -905,16 +912,11 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 md:px-10">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
-            <div className="flex items-center gap-3">
-              <img
-                src="/images/logo/ponici-logo-icon.svg"
-                alt=""
-                className="h-10 w-10"
-              />
-              <span className="font-serif text-3xl text-foreground">Poníci</span>
+            <div className="flex items-center">
+              <span className="font-serif text-3xl font-semibold tracking-tight text-foreground">Poníci</span>
             </div>
             <p className="mt-4 max-w-sm text-[14px] leading-relaxed text-muted-foreground">
-              Jezdecká školička pro děti i dospělé. Císařský ostrov, Praha.
+              Ježdění na ponících pro děti i dospělé. Císařský ostrov, Praha.
             </p>
           </div>
 
@@ -925,7 +927,7 @@ function Footer() {
             <ul className="mt-5 space-y-2 text-[14px] text-foreground/75">
               {[
                 { label: "O nás", href: "#about" },
-                { label: "Pro děti", href: "#pro-deti" },
+                { label: "Programy", href: "#programy" },
                 { label: "Ježdění", href: "#jezdění" },
                 { label: "Výlety", href: "#vylety" },
                 { label: "Stáj", href: "#staj" },
@@ -988,7 +990,7 @@ function Index() {
         <Hero />
         <About />
         <PonyPortrait />
-        <ProDeti />
+        <Programy />
         <Jezdeni />
         <Vylety />
         <Staj />
