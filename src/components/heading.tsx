@@ -16,7 +16,7 @@ type HeadingProps = {
 };
 
 const headingSizes: Record<string, string> = {
-  xl: "text-[12vw] leading-[0.95] font-semibold text-foreground sm:text-5xl md:text-6xl lg:text-[5rem]",
+  xl: "text-[10.5vw] leading-[1.1] font-semibold text-foreground sm:text-5xl sm:leading-[1.08] md:text-6xl lg:text-[4.75rem]",
   lg: "text-4xl leading-[1.02] font-semibold text-foreground md:text-6xl",
   md: "text-3xl leading-[1.08] font-semibold text-foreground md:text-[2.75rem]",
   sm: "text-4xl leading-[1.02] font-semibold text-foreground md:text-5xl",
