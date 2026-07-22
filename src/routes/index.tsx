@@ -82,7 +82,7 @@ function Nav() {
     >
       <div className="mx-auto grid h-full grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-6 md:grid-cols-[1fr_auto_1fr] md:px-10">
         <a href="#top" className="flex min-w-0 items-center" aria-label="Poníci">
-          <span className="font-serif text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+          <span className="text-2xl font-semibold text-foreground md:text-3xl">
             Poníci
           </span>
         </a>
@@ -268,7 +268,7 @@ function About() {
                 },
               ].map((s) => (
                 <div key={s.n} className="rounded-xl bg-cream p-6 md:p-8">
-                  <div className="font-serif text-2xl tracking-tight text-foreground md:text-[2rem]">
+                  <div className="text-2xl font-semibold text-foreground md:text-[2rem]">
                     {s.n}
                   </div>
                   <div className="mt-3 text-micro uppercase tracking-caption text-muted-foreground">
@@ -665,7 +665,7 @@ function Gallery() {
         {galleryGroups.map((group) => (
           <div key={group.title}>
             <Reveal>
-              <h3 className="mb-6 font-serif text-2xl tracking-tight text-foreground md:text-3xl">
+              <h3 className="mb-6 text-2xl font-semibold text-foreground md:text-3xl">
                 {group.title}
               </h3>
             </Reveal>
@@ -784,7 +784,7 @@ function Faq() {
                 key={q}
                 className="grid grid-cols-1 gap-2 py-6 md:grid-cols-[10rem_1fr] md:gap-8 md:py-8"
               >
-                <dt className="font-serif text-xl text-foreground md:text-2xl">
+                <dt className="text-xl font-semibold text-foreground md:text-2xl">
                   {q}
                 </dt>
                 <dd className="text-[15px] leading-[1.75] text-foreground/75">
@@ -821,7 +821,7 @@ function Contact() {
                 icon: Phone,
                 dt: "Telefon",
                 dd: (
-                  <dd className="mt-2 font-serif text-2xl text-foreground md:text-3xl">
+                  <dd className="mt-2 text-2xl font-semibold text-foreground md:text-3xl">
                     <a
                       href="tel:+420721208118"
                       className="transition-colors hover:text-sage-deep focus-visible:outline-2 focus-visible:outline-sage-deep focus-visible:outline-offset-2"
@@ -835,7 +835,7 @@ function Contact() {
                 icon: Mail,
                 dt: "E-mail",
                 dd: (
-                  <dd className="mt-2 font-serif text-2xl text-foreground md:text-[1.75rem] break-all">
+                  <dd className="mt-2 text-2xl font-semibold text-foreground md:text-[1.75rem] break-all">
                     <a
                       href="mailto:monika.zamrazilova@seznam.cz"
                       className="transition-colors hover:text-sage-deep focus-visible:outline-2 focus-visible:outline-sage-deep focus-visible:outline-offset-2"
@@ -849,7 +849,7 @@ function Contact() {
                 icon: MapPin,
                 dt: "Lokalita",
                 dd: (
-                  <dd className="mt-2 font-serif text-2xl leading-tight text-foreground md:text-3xl">
+                  <dd className="mt-2 text-2xl font-semibold leading-tight text-foreground md:text-3xl">
                     Císařský ostrov
                     <br />
                     <span className="text-lg text-foreground/70 md:text-xl">
@@ -913,7 +913,7 @@ function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
             <div className="flex items-center">
-              <span className="font-serif text-3xl font-semibold tracking-tight text-foreground">Poníci</span>
+              <span className="text-3xl font-semibold text-foreground">Poníci</span>
             </div>
             <p className="mt-4 max-w-sm text-[14px] leading-relaxed text-muted-foreground">
               Ježdění na ponících pro děti i dospělé. Císařský ostrov, Praha.

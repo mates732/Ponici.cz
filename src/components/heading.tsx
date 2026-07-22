@@ -16,10 +16,10 @@ type HeadingProps = {
 };
 
 const headingSizes: Record<string, string> = {
-  xl: "font-serif text-[12vw] leading-[0.95] tracking-[-0.02em] text-foreground sm:text-5xl md:text-6xl lg:text-[5rem]",
-  lg: "font-serif text-4xl leading-[1.02] tracking-[-0.02em] text-foreground md:text-6xl",
-  md: "font-serif text-3xl leading-[1.08] tracking-[-0.02em] text-foreground md:text-[2.75rem]",
-  sm: "font-serif text-4xl leading-[1.02] tracking-[-0.02em] text-foreground md:text-5xl",
+  xl: "text-[12vw] leading-[0.95] font-semibold text-foreground sm:text-5xl md:text-6xl lg:text-[5rem]",
+  lg: "text-4xl leading-[1.02] font-semibold text-foreground md:text-6xl",
+  md: "text-3xl leading-[1.08] font-semibold text-foreground md:text-[2.75rem]",
+  sm: "text-4xl leading-[1.02] font-semibold text-foreground md:text-5xl",
 };
 
 export function Heading({ as = "h2", size = "lg", children, className = "" }: HeadingProps) {
